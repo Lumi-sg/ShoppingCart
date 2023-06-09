@@ -1,0 +1,43 @@
+.Searchbar {
+    display: flex;
+    align-items: center;
+}
+
+.CartButton {
+    align-items: center;
+}
+
+input {
+    width: 30vw;
+    background-color: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.364);
+    padding: 0.5rem;
+    color: white;
+    border-radius: 10px;
+}
+
+button {
+    margin: 0.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.cartButtonDiv {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.topLeftButtons {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 1rem;
+}
