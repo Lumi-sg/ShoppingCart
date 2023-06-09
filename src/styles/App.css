@@ -1,0 +1,43 @@
+.App {
+    height: 100vh;
+    width: 100vw;
+    background-color: #101010;
+    color: aliceblue;
+    display: grid;
+    grid-template-areas:
+        "Search Search Search Search"
+        "SideBar Products Products Cart"
+        "SideBar Products Products Cart"
+        "Footer Footer Footer Footer";
+    grid-template-rows: 3rem auto auto 3.7rem;
+    grid-template-columns: 10rem auto auto 15rem;
+}
+
+.Searchbar {
+    grid-area: Search;
+    border-bottom: 2px solid white;
+}
+
+.Sidebar {
+    grid-area: SideBar;
+    border-right: 2px solid white;
+}
+
+.Products {
+    grid-area: Products;
+}
+
+.Footer {
+    border-top: 2px solid white;
+    grid-area: Footer;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.Cart {
+    background-color: rgba(255, 255, 255, 0.04);
+    grid-area: Cart;
+}
