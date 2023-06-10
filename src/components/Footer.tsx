@@ -6,7 +6,7 @@ const Footer = () => {
             <p>
                 Built by Lumi&nbsp;&nbsp;&nbsp;
                 <a
-                    href="https://github.com/Lumi-sg/MemoryCard"
+                    href="https://github.com/Lumi-sg/ShoppingCart"
                     style={{ textDecoration: "none" }}
                     target="_blank"
                     rel="noopener noreferrer"

@@ -17,7 +17,12 @@ type ProductProps = {
 
 const allProducts = boxes.concat(keycaps, switches, phobs, diyKitArray);
 
-const Products = ({ selectedProduct, search, setSearch }: ProductProps) => {
+const Products = ({
+    selectedProduct,
+    setSelectedProduct,
+    search,
+    setSearch,
+}: ProductProps) => {
     const [matchedProducts, setMatchedProducts] = useState<Product[]>([]);
 
     useEffect(() => {
@@ -25,6 +30,9 @@ const Products = ({ selectedProduct, search, setSearch }: ProductProps) => {
             product.name.toLowerCase().includes(search.toLowerCase())
         );
         setMatchedProducts(filteredProducts);
+        if (search === "") {
+            setSelectedProduct("All");
+        }
     }, [search]);
 
     useEffect(() => {
@@ -52,7 +60,7 @@ const Products = ({ selectedProduct, search, setSearch }: ProductProps) => {
             case "About":
                 return <AboutPage />;
             default:
-                return <ProductPage products={matchedProducts} />;
+                return <AboutPage />;
         }
     }
 };

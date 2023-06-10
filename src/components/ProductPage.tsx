@@ -11,7 +11,7 @@ const ProductPage = ({ products }: ProductPageProps) => {
                 <div className="Card" key={product.id}>
                     <img src={product.image} alt={product.name} />
                     <p className="Name">{product.name}</p>
-                    <p className="Price">${product.price} CAD</p>
+                    <p className="Price">${product.price}</p>
                     <p>{product.description}</p>
                     <button
                         onClick={() =>
