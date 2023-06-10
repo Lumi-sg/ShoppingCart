@@ -15,7 +15,7 @@ const ranaCaps = createProduct(
 const frame1Caps = createProduct(
     "Frame 1 PBT Buttons",
     30,
-    "Frame 1 PBT Buttons by Frame 1",
+    "PBT Buttons by Frame 1",
     22,
     frame1CapsImage
 );

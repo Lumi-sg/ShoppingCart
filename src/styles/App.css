@@ -6,8 +6,8 @@
     display: grid;
     grid-template-areas:
         "Search Search Search Search"
-        "SideBar Products Products Cart"
-        "SideBar Products Products Cart"
+        "SideBar Products Products Products"
+        "SideBar Products Products Products"
         "Footer Footer Footer Footer";
     grid-template-rows: 3.5rem auto auto 3.7rem;
     grid-template-columns: 10rem auto auto 15rem;
@@ -40,4 +40,5 @@
 .Cart {
     background-color: rgba(255, 255, 255, 0.04);
     grid-area: Cart;
+    display: none;
 }
