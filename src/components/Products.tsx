@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import PhobPage from "../components/ProductPages/phobPage";
-import GCCCommissions from "./ProductPages/GCCDIYKitPage";
-import BoxesPage from "./ProductPages/BoxesPage";
-import SwitchPage from "./ProductPages/SwitchPage";
-import KeycapsPages from "./ProductPages/KeycapsPages";
 import { allProducts } from "../products/AllProducts";
+import { phobs } from "../products/Controllers";
+import { diyKitArray } from "../products/Controllers";
+import { boxes } from "../products/Boxes";
+import { switches } from "../products/Switches";
+import { keycaps } from "../products/Keycaps";
 import { Product } from "./ProductFactory";
-import AllProductPage from "./ProductPages/AllProductPage";
+import ProductPage from "./ProductPages/ProductPage";
 
 type ProductProps = {
     selectedProduct: string;
@@ -32,23 +32,23 @@ const Products = ({ selectedProduct, search, setSearch }: ProductProps) => {
     }, [selectedProduct]);
 
     if (search !== "") {
-        return <AllProductPage matchedProducts={matchedProducts} />;
+        return <ProductPage products={matchedProducts} />;
     } else {
         switch (selectedProduct) {
             case "Phobs":
-                return <PhobPage />;
+                return <ProductPage products={phobs} />;
             case "GCC DIY Kit":
-                return <GCCCommissions />;
+                return <ProductPage products={diyKitArray} />;
             case "Box Builds":
-                return <BoxesPage />;
+                return <ProductPage products={boxes} />;
             case "Switches":
-                return <SwitchPage />;
+                return <ProductPage products={switches} />;
             case "Keycaps":
-                return <KeycapsPages />;
+                return <ProductPage products={keycaps} />;
             case "All":
-                return <AllProductPage matchedProducts={matchedProducts} />;
+                return <ProductPage products={matchedProducts} />;
             default:
-                return <AllProductPage matchedProducts={matchedProducts} />;
+                return <ProductPage products={matchedProducts} />;
         }
     }
 };

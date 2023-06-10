@@ -1,19 +1,23 @@
-import { switches } from "../../products/Switches";
+import { Product } from "../ProductFactory";
 
-const SwitchPage = () => {
+type ProductPageProps = {
+    products: Product[];
+};
+
+const ProductPage = ({ products }: ProductPageProps) => {
     return (
         <div className="Products">
-            {switches.map((product) => (
+            {products.map((product) => (
                 <div key={product.id}>
                     <img src={product.image} alt={product.name} />
                     <p>{product.name}</p>
                     <p>${product.price} CAD</p>
-                    <p>{product.quantity}x Switches</p>
                     <p>{product.description}</p>
+                    <button>Add to Cart</button>
                 </div>
             ))}
         </div>
     );
 };
 
-export default SwitchPage;
+export default ProductPage;

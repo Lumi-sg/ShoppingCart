@@ -6,6 +6,7 @@ import phobFourImage from "../assets/phobs/Fv5KxDwakAAAmRA.jpg";
 import phobFiveImage from "../assets/phobs/FGx-AdYVEAA9Zf5.webp";
 import budgetPhobImage from "../assets/phobs/il_fullxfull.4679327499_ny7t.avif";
 import diyKitImage from "../assets/phobs/20230330_124608.webp";
+import diyKit2Image from "../assets/phobs/cr8zu28e.png";
 
 const phobOne = createProduct(
     "Phob One",
@@ -50,13 +51,17 @@ const budgetPhob = createProduct(
     budgetPhobImage
 );
 
-export const diyKit = createProduct(
+const diyKit = createProduct(
     "DIY Kit",
     225,
     "This is a DIY Kit for a 2.0 Phob",
     1,
     diyKitImage
 );
+
+const diyKit2 = createProduct("DIY Kit 2", 40, "PCB Only", 1, diyKit2Image);
+
+export const diyKitArray = [diyKit, diyKit2];
 
 export const phobs = [
     phobOne,
