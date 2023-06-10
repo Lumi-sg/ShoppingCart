@@ -11,6 +11,7 @@ const AllProductPage = ({ matchedProducts }: AllProductProps) => {
                     <p>{product.name}</p>
                     <p>${product.price} CAD</p>
                     <p>{product.description}</p>
+                    <button>Add to Cart</button>
                 </div>
             ))}
         </div>
