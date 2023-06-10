@@ -22,15 +22,6 @@ const Sidebar = ({ setSelectedProduct }: SidebarProps) => {
                 <button onClick={() => handleProductClick("Keycaps")}>
                     Keycaps
                 </button>
-                <button onClick={() => handleProductClick("Chassis")}>
-                    Chassis
-                </button>
-                <button onClick={() => handleProductClick("Cables")}>
-                    Cables
-                </button>
-                <button onClick={() => handleProductClick("Box Commissions")}>
-                    Commission
-                </button>
             </div>
             <div className="Controllers">
                 <span>Gamecube Controllers</span>

@@ -4,11 +4,12 @@ import ranaDigitalImage from "../assets/boxes/200199077-9dda4490-ee79-46d5-b45f-
 import chocwaImage from "../assets/boxes/20220724_160904.jpg";
 import frame1Image from "../assets/boxes/final_models_heavy_2021.webp";
 import b0xxImage from "../assets/boxes/maxresdefault.jpg";
+import HTANGLImage from "../assets/boxes/IMG_20220324_213747.jpg";
 
 const OFOF1 = createProduct(
     "OFOF1",
     175,
-    "This is an Open Frame Open Frame 1 by Rana Labs",
+    "Open Frame Open Frame 1 by Rana Labs",
     1,
     OFOF1Image
 );
@@ -45,4 +46,6 @@ const b0xx = createProduct(
     b0xxImage
 );
 
-export const boxes = [OFOF1, ranaDigital, chocwa, frame1, b0xx];
+const HTNGL = createProduct("HTANGL", 175, "HTANGL by Hadoe", 1, HTANGLImage);
+
+export const boxes = [OFOF1, ranaDigital, chocwa, frame1, b0xx, HTNGL];
