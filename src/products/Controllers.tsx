@@ -7,6 +7,7 @@ import phobFiveImage from "../assets/phobs/FGx-AdYVEAA9Zf5.webp";
 import budgetPhobImage from "../assets/phobs/il_fullxfull.4679327499_ny7t.avif";
 import diyKitImage from "../assets/phobs/20230330_124608.webp";
 import diyKit2Image from "../assets/phobs/cr8zu28e.png";
+import diyKit3Image from "../assets/phobs/dropinphob.png";
 
 const phobOne = createProduct(
     "Phob One",
@@ -60,8 +61,15 @@ const diyKit = createProduct(
 );
 
 const diyKit2 = createProduct("DIY Kit 2", 40, "PCB Only", 1, diyKit2Image);
+const diyKit3 = createProduct(
+    "DIY Kit 3",
+    90,
+    "Phob 2.05 Drop in and Play Kit",
+    1,
+    diyKit3Image
+);
 
-export const diyKitArray = [diyKit, diyKit2];
+export const diyKitArray = [diyKit, diyKit2, diyKit3];
 
 export const phobs = [
     phobOne,
