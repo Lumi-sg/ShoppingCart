@@ -15,12 +15,7 @@ type ProductProps = {
     setSearch: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Products = ({
-    selectedProduct,
-    setSelectedProduct,
-    search,
-    setSearch,
-}: ProductProps) => {
+const Products = ({ selectedProduct, search, setSearch }: ProductProps) => {
     const [matchedProducts, setMatchedProducts] = useState<Product[]>([]);
 
     useEffect(() => {
@@ -50,6 +45,8 @@ const Products = ({
                 return <SwitchPage />;
             case "Keycaps":
                 return <KeycapsPages />;
+            case "All":
+                return <AllProductPage matchedProducts={matchedProducts} />;
             default:
                 return <AllProductPage matchedProducts={matchedProducts} />;
         }

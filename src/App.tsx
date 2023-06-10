@@ -1,5 +1,5 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Routes } from "react-router";
 
 import "./styles/Products.css";
@@ -20,7 +20,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <div className="App">
-                <Search search={search} setSearch={setSearch} />
+                <Search search={search} setSearch={setSearch} setSelectedProduct={setSelectedProduct}/>
                 <Sidebar
                     setSelectedProduct={setSelectedProduct}
                     setSearch={setSearch}

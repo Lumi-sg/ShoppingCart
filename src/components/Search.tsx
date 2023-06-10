@@ -3,9 +3,10 @@ import "../styles/Search.css";
 type SearchProps = {
     search: string;
     setSearch: React.Dispatch<React.SetStateAction<string>>;
+    setSelectedProduct: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Search = ({ search, setSearch }: SearchProps) => {
+const Search = ({ search, setSearch, setSelectedProduct }: SearchProps) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
     };
@@ -13,7 +14,7 @@ const Search = ({ search, setSearch }: SearchProps) => {
     return (
         <div className="Searchbar">
             <div className="topLeftButtons">
-                <button>Shop</button>
+                <button onClick={() => setSelectedProduct("All")}>Shop</button>
                 <button>About</button>
             </div>
             <div className="formDiv">
