@@ -6,6 +6,7 @@ import { switches } from "../products/Switches";
 import { keycaps } from "../products/Keycaps";
 import { Product } from "./ProductFactory";
 import ProductPage from "./ProductPage";
+import AboutPage from "./AboutPage";
 
 type ProductProps = {
     selectedProduct: string;
@@ -48,6 +49,8 @@ const Products = ({ selectedProduct, search, setSearch }: ProductProps) => {
                 return <ProductPage products={keycaps} />;
             case "All":
                 return <ProductPage products={matchedProducts} />;
+            case "About":
+                return <AboutPage />;
             default:
                 return <ProductPage products={matchedProducts} />;
         }

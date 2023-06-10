@@ -15,7 +15,9 @@ const Search = ({ search, setSearch, setSelectedProduct }: SearchProps) => {
         <div className="Searchbar">
             <div className="topLeftButtons">
                 <button onClick={() => setSelectedProduct("All")}>Shop</button>
-                <button>About</button>
+                <button onClick={() => setSelectedProduct("About")}>
+                    About
+                </button>
             </div>
             <div className="formDiv">
                 <form onSubmit={handleSubmit}>
