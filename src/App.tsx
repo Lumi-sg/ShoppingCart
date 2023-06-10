@@ -1,9 +1,11 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import { useState } from "react";
-import { Routes } from "react-router"; // updated import statement
+import { Routes } from "react-router";
+
 import "./styles/Products.css";
 import "./styles/App.css";
 import "./styles/Reset.css";
+
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Products from "./components/Products";

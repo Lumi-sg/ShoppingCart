@@ -1,6 +1,4 @@
-import React from "react";
-import { phobs } from "../../products/Phobs";
-
+import { phobs } from "../../products/Controllers";
 
 const PhobPage = () => {
     return (

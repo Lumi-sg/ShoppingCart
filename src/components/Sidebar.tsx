@@ -11,31 +11,10 @@ const Sidebar = ({ setSelectedProduct }: SidebarProps) => {
 
     return (
         <div className="Sidebar">
-            <div className="Controllers">
-                <span>Gamecube Controllers</span>
-                <button onClick={() => handleProductClick("Phobs")}>
-                    Completed Phobs
-                </button>
-                <button onClick={() => handleProductClick("OEMs")}>
-                    Completed OEMs
-                </button>
-                <button onClick={() => handleProductClick("GCC DIY Kits")}>
-                    DIY Kits
-                </button>
-                <button onClick={() => handleProductClick("GCC Parts")}>
-                    Individual Parts
-                </button>
-                <button onClick={() => handleProductClick("GCC Commissions")}>
-                    Commissions
-                </button>
-            </div>
             <div className="Rectangles">
                 <span>Box Controllers</span>
                 <button onClick={() => handleProductClick("Box Builds")}>
                     Completed Builds
-                </button>
-                <button onClick={() => handleProductClick("Box DIY Kits")}>
-                    DIY Kits
                 </button>
                 <button onClick={() => handleProductClick("Switches")}>
                     Switches
@@ -50,7 +29,16 @@ const Sidebar = ({ setSelectedProduct }: SidebarProps) => {
                     Cables
                 </button>
                 <button onClick={() => handleProductClick("Box Commissions")}>
-                    Commissions
+                    Commission
+                </button>
+            </div>
+            <div className="Controllers">
+                <span>Gamecube Controllers</span>
+                <button onClick={() => handleProductClick("Phobs")}>
+                    Phobs
+                </button>
+                <button onClick={() => handleProductClick("GCC DIY Kit")}>
+                    DIY Kit
                 </button>
             </div>
         </div>

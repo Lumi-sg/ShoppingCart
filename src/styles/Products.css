@@ -2,10 +2,17 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1rem;
+    justify-content: start;
+    align-content: start;
 }
 
 .Products > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
+    justify-items: start;
+    align-items: start;
 }
 
 .Products > div > img {

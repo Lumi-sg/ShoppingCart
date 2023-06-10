@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-type Product = {
+export type Product = {
     name: string;
     price: number;
     id: string;
