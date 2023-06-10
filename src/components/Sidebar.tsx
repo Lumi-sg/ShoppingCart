@@ -2,11 +2,13 @@ import "../styles/Sidebar.css";
 
 type SidebarProps = {
     setSelectedProduct: React.Dispatch<React.SetStateAction<string>>;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Sidebar = ({ setSelectedProduct }: SidebarProps) => {
+const Sidebar = ({ setSelectedProduct, setSearch }: SidebarProps) => {
     const handleProductClick = (product: string) => {
         setSelectedProduct(product);
+        setSearch("");
     };
 
     return (

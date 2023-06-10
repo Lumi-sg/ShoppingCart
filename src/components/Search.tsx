@@ -1,7 +1,11 @@
-import React from "react";
 import "../styles/Search.css";
 
-const Search = () => {
+type SearchProps = {
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const Search = ({ search, setSearch }: SearchProps) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
     };
@@ -14,7 +18,12 @@ const Search = () => {
             </div>
             <div className="formDiv">
                 <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Search"></input>
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    ></input>
                 </form>
             </div>
             <div className="cartButtonDiv">

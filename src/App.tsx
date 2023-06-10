@@ -1,5 +1,5 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes } from "react-router";
 
 import "./styles/Products.css";
@@ -14,16 +14,28 @@ import Sidebar from "./components/Sidebar";
 
 const App = () => {
     const [selectedProduct, setSelectedProduct] = useState("");
+    const [search, setSearch] = useState("");
+
 
     return (
         <BrowserRouter>
             <div className="App">
-                <Search />
-                <Sidebar setSelectedProduct={setSelectedProduct} />
+                <Search search={search} setSearch={setSearch} />
+                <Sidebar
+                    setSelectedProduct={setSelectedProduct}
+                    setSearch={setSearch}
+                />
                 <Routes>
                     <Route
                         path="/"
-                        element={<Products selectedProduct={selectedProduct} />}
+                        element={
+                            <Products
+                                selectedProduct={selectedProduct}
+                                setSelectedProduct={setSelectedProduct}
+                                search={search}
+                                setSearch={setSearch}
+                            />
+                        }
                     />
                 </Routes>
                 <Cart />

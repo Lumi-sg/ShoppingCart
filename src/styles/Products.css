@@ -4,6 +4,8 @@
     gap: 1rem;
     justify-content: start;
     align-content: start;
+    max-height: 100rem;
+    overflow-y: scroll;
 }
 
 .Products > div {
