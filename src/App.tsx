@@ -1,23 +1,28 @@
-import Sidebar from "./components/Sidebar";
-import Search from "./components/Search";
-import Footer from "./components/Footer";
-import Products from "./components/Products";
-import Cart from "./components/Cart";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+import { useState } from "react";
+import { Routes } from "react-router"; // updated import statement
+import "./styles/Products.css";
 import "./styles/App.css";
 import "./styles/Reset.css";
+import Cart from "./components/Cart";
+import Footer from "./components/Footer";
+import Products from "./components/Products";
+import Search from "./components/Search";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
+    const [selectedProduct, setSelectedProduct] = useState("");
 
-    
     return (
         <BrowserRouter>
             <div className="App">
                 <Search />
-                <Sidebar />
+                <Sidebar setSelectedProduct={setSelectedProduct} />
                 <Routes>
-                    <Route />
-                    <Route path="/" element={<Products />} />
+                    <Route
+                        path="/"
+                        element={<Products selectedProduct={selectedProduct} />}
+                    />
                 </Routes>
                 <Cart />
                 <Footer />

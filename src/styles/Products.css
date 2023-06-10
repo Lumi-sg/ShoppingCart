@@ -1,0 +1,23 @@
+.Products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+}
+
+.Products > div {
+    padding: 1rem;
+}
+
+.Products > div > img {
+    margin-bottom: 1rem;
+    width: 15rem;
+    height: 15rem;
+}
+
+.Products > div > p:first-of-type {
+    font-weight: bold;
+}
+
+.Products > div > p:last-of-type {
+    margin-top: 1rem;
+}

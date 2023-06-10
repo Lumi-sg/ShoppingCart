@@ -9,8 +9,8 @@ const Search = () => {
     return (
         <div className="Searchbar">
             <div className="topLeftButtons">
-                <button>Home</button>
                 <button>Shop</button>
+                <button>About</button>
             </div>
             <div className="formDiv">
                 <form onSubmit={handleSubmit}>
