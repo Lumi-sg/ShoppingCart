@@ -1,4 +1,4 @@
-import { Product } from "../ProductFactory";
+import { Product } from "./ProductFactory";
 
 type ProductPageProps = {
     products: Product[];

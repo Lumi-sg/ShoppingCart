@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { allProducts } from "../products/AllProducts";
 import { phobs } from "../products/Controllers";
 import { diyKitArray } from "../products/Controllers";
 import { boxes } from "../products/Boxes";
 import { switches } from "../products/Switches";
 import { keycaps } from "../products/Keycaps";
 import { Product } from "./ProductFactory";
-import ProductPage from "./ProductPages/ProductPage";
+import ProductPage from "./ProductPage";
 
 type ProductProps = {
     selectedProduct: string;
@@ -14,6 +13,8 @@ type ProductProps = {
     search: string;
     setSearch: React.Dispatch<React.SetStateAction<string>>;
 };
+
+const allProducts = boxes.concat(keycaps, switches, phobs, diyKitArray);
 
 const Products = ({ selectedProduct, search, setSearch }: ProductProps) => {
     const [matchedProducts, setMatchedProducts] = useState<Product[]>([]);
