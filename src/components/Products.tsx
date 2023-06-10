@@ -13,6 +13,7 @@ type ProductProps = {
     setSelectedProduct: React.Dispatch<React.SetStateAction<string>>;
     search: string;
     setSearch: React.Dispatch<React.SetStateAction<string>>;
+    setCartData: React.Dispatch<React.SetStateAction<Product[]>>;
 };
 
 const allProducts = boxes.concat(keycaps, switches, phobs, diyKitArray);
@@ -22,6 +23,7 @@ const Products = ({
     setSelectedProduct,
     search,
     setSearch,
+    setCartData,
 }: ProductProps) => {
     const [matchedProducts, setMatchedProducts] = useState<Product[]>([]);
 
@@ -42,21 +44,44 @@ const Products = ({
     }, [selectedProduct]);
 
     if (search !== "") {
-        return <ProductPage products={matchedProducts} />;
+        return (
+            <ProductPage products={matchedProducts} setCartData={setCartData} />
+        );
     } else {
         switch (selectedProduct) {
             case "Phobs":
-                return <ProductPage products={phobs} />;
+                return (
+                    <ProductPage products={phobs} setCartData={setCartData} />
+                );
             case "GCC DIY Kit":
-                return <ProductPage products={diyKitArray} />;
+                return (
+                    <ProductPage
+                        products={diyKitArray}
+                        setCartData={setCartData}
+                    />
+                );
             case "Box Builds":
-                return <ProductPage products={boxes} />;
+                return (
+                    <ProductPage products={boxes} setCartData={setCartData} />
+                );
             case "Switches":
-                return <ProductPage products={switches} />;
+                return (
+                    <ProductPage
+                        products={switches}
+                        setCartData={setCartData}
+                    />
+                );
             case "Keycaps":
-                return <ProductPage products={keycaps} />;
+                return (
+                    <ProductPage products={keycaps} setCartData={setCartData} />
+                );
             case "All":
-                return <ProductPage products={matchedProducts} />;
+                return (
+                    <ProductPage
+                        products={matchedProducts}
+                        setCartData={setCartData}
+                    />
+                );
             case "About":
                 return <AboutPage />;
             default:

@@ -2,9 +2,10 @@ import { Product } from "./ProductFactory";
 
 type ProductPageProps = {
     products: Product[];
+    setCartData: React.Dispatch<React.SetStateAction<Product[]>>;
 };
 
-const ProductPage = ({ products }: ProductPageProps) => {
+const ProductPage = ({ products, setCartData }: ProductPageProps) => {
     return (
         <div className="Products">
             {products.map((product) => (
@@ -15,9 +16,10 @@ const ProductPage = ({ products }: ProductPageProps) => {
                     <p>{product.description}</p>
                     <button
                         onClick={() =>
-                            console.log(
-                                `Added ${product.name} to Cart. ID: ${product.id}`
-                            )
+                            setCartData((prevCartData) => [
+                                ...prevCartData,
+                                product,
+                            ])
                         }
                     >
                         Add to Cart

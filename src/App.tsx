@@ -11,16 +11,21 @@ import Footer from "./components/Footer";
 import Products from "./components/Products";
 import Search from "./components/Search";
 import Sidebar from "./components/Sidebar";
+import { Product } from "./components/ProductFactory";
 
 const App = () => {
     const [selectedProduct, setSelectedProduct] = useState("");
     const [search, setSearch] = useState("");
-
+    const [cartData, setCartData] = useState<Product[]>([]);
 
     return (
         <BrowserRouter>
             <div className="App">
-                <Search search={search} setSearch={setSearch} setSelectedProduct={setSelectedProduct}/>
+                <Search
+                    search={search}
+                    setSearch={setSearch}
+                    setSelectedProduct={setSelectedProduct}
+                />
                 <Sidebar
                     setSelectedProduct={setSelectedProduct}
                     setSearch={setSearch}
@@ -34,11 +39,12 @@ const App = () => {
                                 setSelectedProduct={setSelectedProduct}
                                 search={search}
                                 setSearch={setSearch}
+                                setCartData={setCartData}
                             />
                         }
                     />
                 </Routes>
-                <Cart />
+                <Cart cartData={cartData} setCartData={setCartData} />
                 <Footer />
             </div>
         </BrowserRouter>
