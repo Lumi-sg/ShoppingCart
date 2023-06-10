@@ -8,12 +8,20 @@ const ProductPage = ({ products }: ProductPageProps) => {
     return (
         <div className="Products">
             {products.map((product) => (
-                <div key={product.id}>
+                <div className="Card" key={product.id}>
                     <img src={product.image} alt={product.name} />
-                    <p>{product.name}</p>
-                    <p>${product.price} CAD</p>
+                    <p className="Name">{product.name}</p>
+                    <p className="Price">${product.price} CAD</p>
                     <p>{product.description}</p>
-                    <button>Add to Cart</button>
+                    <button
+                        onClick={() =>
+                            console.log(
+                                `Added ${product.name} to Cart. ID: ${product.id}`
+                            )
+                        }
+                    >
+                        Add to Cart
+                    </button>
                 </div>
             ))}
         </div>

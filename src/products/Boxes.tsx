@@ -5,6 +5,7 @@ import chocwaImage from "../assets/boxes/20220724_160904.jpg";
 import frame1Image from "../assets/boxes/final_models_heavy_2021.webp";
 import b0xxImage from "../assets/boxes/maxresdefault.jpg";
 import HTANGLImage from "../assets/boxes/IMG_20220324_213747.jpg";
+import prismImage from "../assets/boxes/prism.png";
 
 const OFOF1 = createProduct(
     "OFOF1",
@@ -48,4 +49,6 @@ const b0xx = createProduct(
 
 const HTNGL = createProduct("HTANGL", 175, "HTANGL by Hadoe", 1, HTANGLImage);
 
-export const boxes = [OFOF1, ranaDigital, chocwa, frame1, b0xx, HTNGL];
+const prism = createProduct("Prism", 300, "Prism by WunVzn", 1, prismImage);
+
+export const boxes = [OFOF1, ranaDigital, chocwa, frame1, b0xx, HTNGL, prism];

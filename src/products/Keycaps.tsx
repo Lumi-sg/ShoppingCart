@@ -7,7 +7,7 @@ import hyperXImage from "../assets/Keycaps/u3gilyx2.png";
 const ranaCaps = createProduct(
     "Rana Caps",
     30,
-    "Circle Caps by Rana Labs (Controller not included)",
+    "(Controller not included)",
     30,
     ranaCapsImage
 );

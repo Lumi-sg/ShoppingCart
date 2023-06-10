@@ -9,7 +9,7 @@
         "SideBar Products Products Cart"
         "SideBar Products Products Cart"
         "Footer Footer Footer Footer";
-    grid-template-rows: 3.7rem auto auto 3.7rem;
+    grid-template-rows: 3.5rem auto auto 3.7rem;
     grid-template-columns: 10rem auto auto 15rem;
 }
 
