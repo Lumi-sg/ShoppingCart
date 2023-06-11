@@ -1,6 +1,7 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Routes } from "react-router";
+import classNames from "classnames";
 
 import "./styles/Products.css";
 import "./styles/App.css";
@@ -21,6 +22,9 @@ const App = () => {
         return savedCartData ? JSON.parse(savedCartData) : [];
     });
     const [isCartActive, setIsCartActive] = useState(false);
+    const cartContainerClasses = classNames("CartContainer", {
+        Active: isCartActive,
+    });
 
     useEffect(() => {
         const savedCartData = localStorage.getItem("cartData");
@@ -36,6 +40,10 @@ const App = () => {
         localStorage.setItem("cartData", JSON.stringify(cartData));
     }, [cartData]);
 
+    useEffect(() => {
+        console.log(isCartActive);
+    }, [isCartActive]);
+
     return (
         <BrowserRouter>
             <div className="App">
@@ -44,6 +52,8 @@ const App = () => {
                     setSearch={setSearch}
                     setSelectedProduct={setSelectedProduct}
                     cartData={cartData}
+                    isCartActive={isCartActive}
+                    setIsCartActive={setIsCartActive}
                 />
                 <Sidebar
                     setSelectedProduct={setSelectedProduct}
@@ -63,7 +73,11 @@ const App = () => {
                         }
                     />
                 </Routes>
-                <Cart cartData={cartData} setCartData={setCartData} />
+
+                <div className={cartContainerClasses}>
+                    <Cart cartData={cartData} setCartData={setCartData} />
+                </div>
+
                 <Footer />
             </div>
         </BrowserRouter>

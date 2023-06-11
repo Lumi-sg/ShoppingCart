@@ -6,11 +6,12 @@
     display: grid;
     grid-template-areas:
         "Search Search Search Search"
-        "SideBar Products Products CartContainer"
-        "SideBar Products Products CartContainer"
+        "SideBar Products Products Products"
+        "SideBar Products Products Products"
         "Footer Footer Footer Footer";
     grid-template-rows: 3.5rem auto auto 3.7rem;
     grid-template-columns: 10rem auto auto 15rem;
+    overflow-x: hidden;
 }
 
 .Searchbar {
@@ -35,16 +36,25 @@
     left: 0;
     right: 0;
     padding: 1rem;
+    z-index: 1; /* Ensure the footer appears above other elements */
 }
 
 .CartContainer {
-    grid-area: CartContainer;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    right: 0;
+
+    height: 87%;
+    background-color: #101010f0;
+    z-index: 2;
+    transform: translateX(100%) translateY(-50%);
+
+    transition: transform 0.3s ease-in-out;
 }
 
 .CartContainer.Active {
-    transform: translateX(-100%);
+    transform: translateX(0) translateY(-50%);
 }

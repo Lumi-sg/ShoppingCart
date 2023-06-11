@@ -6,6 +6,8 @@ type SearchProps = {
     setSearch: React.Dispatch<React.SetStateAction<string>>;
     setSelectedProduct: React.Dispatch<React.SetStateAction<string>>;
     cartData: Product[];
+    isCartActive: boolean;
+    setIsCartActive: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const Search = ({
@@ -13,6 +15,7 @@ const Search = ({
     setSearch,
     setSelectedProduct,
     cartData,
+    setIsCartActive,
 }: SearchProps) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -37,7 +40,12 @@ const Search = ({
                 </form>
             </div>
             <div className="cartButtonDiv">
-                <button className="CartButton">Cart ({cartData.length})</button>
+                <button
+                    className="CartButton"
+                    onClick={() => setIsCartActive((prevState) => !prevState)}
+                >
+                    Cart ({cartData.length})
+                </button>
             </div>
         </div>
     );

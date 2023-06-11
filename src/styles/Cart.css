@@ -1,7 +1,16 @@
-.CartContainer {
+.CartComponentContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+}
+
+.Cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -10,13 +19,10 @@ h1 {
     font-size: 1.5rem;
 }
 
-.Checkout {
-    text-align: center;
-    margin-top: auto;
-}
-
-.Checkout button {
-    padding: 0.5rem;
+.Cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .CartItem {
@@ -25,7 +31,10 @@ h1 {
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
     margin-left: 0.5rem;
+    padding: 0.5rem;
+    width: 15rem;
 }
+
 .CartItem button {
     height: 1.5rem;
     width: 1.5rem;
@@ -41,8 +50,10 @@ h1 {
     margin-right: 0.4rem;
 }
 
-.CartPrice {
+.CartItemPrice {
     font-weight: bold;
+    margin-left: auto; /* Align to the right */
+    min-width: 4rem; /* Set a minimum width to prevent it from shifting */
 }
 
 .CartDeleteButton {
@@ -51,6 +62,13 @@ h1 {
     color: #f44336;
     cursor: pointer;
 }
+
 .CheckOutTotalPrice {
     font-size: 1.5rem;
+}
+
+.Checkout {
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem;
 }

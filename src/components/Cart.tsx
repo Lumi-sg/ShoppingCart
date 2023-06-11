@@ -44,9 +44,9 @@ const Cart = ({ cartData, setCartData }: CartProps) => {
     };
 
     return (
-        <div className="CartContainer">
+        <div className="CartComponentContainer">
+            <h1>Shopping Cart</h1>
             <div className="Cart">
-                <h1>Shopping Cart</h1>
                 {cartData.map((product) => {
                     const { id, name, quantity, price } = product;
                     const productTotal = price * quantity;
@@ -68,7 +68,7 @@ const Cart = ({ cartData, setCartData }: CartProps) => {
                                     </button>
                                 </p>
                             </div>
-                            <p className="CartPrice">${productTotal}</p>
+                            <p className="CartItemPrice">${productTotal}</p>
                             <button
                                 className="CartDeleteButton"
                                 onClick={() => handleDelete(id)}
