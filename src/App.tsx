@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, HashRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Routes } from "react-router";
 import classNames from "classnames";
@@ -45,7 +45,7 @@ const App = () => {
     }, [isCartActive]);
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="App">
                 <Search
                     search={search}
@@ -80,7 +80,7 @@ const App = () => {
 
                 <Footer />
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
