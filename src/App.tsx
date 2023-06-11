@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, HashRouter } from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Routes } from "react-router";
 import classNames from "classnames";
