@@ -4,6 +4,9 @@
     align-items: center;
     height: 100%;
 }
+.ExitCardButton {
+    padding: 0.75rem;
+}
 
 .Cart {
     display: flex;
@@ -75,4 +78,10 @@ h1 {
 
 .Checkout button {
     padding: 0.5rem;
+}
+
+.CartHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

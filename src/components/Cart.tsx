@@ -4,9 +4,11 @@ import { Product } from "./ProductFactory";
 type CartProps = {
     cartData: Product[];
     setCartData: React.Dispatch<React.SetStateAction<Product[]>>;
+    isCartActive: boolean;
+    setIsCartActive: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Cart = ({ cartData, setCartData }: CartProps) => {
+const Cart = ({ cartData, setCartData, setIsCartActive }: CartProps) => {
     const totalPrice = cartData.reduce(
         (acc, curr) => acc + curr.price * curr.quantity,
         0
@@ -45,7 +47,15 @@ const Cart = ({ cartData, setCartData }: CartProps) => {
 
     return (
         <div className="CartComponentContainer">
-            <h1>Shopping Cart</h1>
+            <div className="CartHeader">
+                <h1>Shopping Cart</h1>
+                <button
+                    className="ExitCardButton"
+                    onClick={() => setIsCartActive((prevState) => !prevState)}
+                >
+                    X
+                </button>
+            </div>
             <div className="Cart">
                 {cartData.map((product) => {
                     const { id, name, quantity, price } = product;

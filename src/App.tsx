@@ -75,7 +75,7 @@ const App = () => {
                 </Routes>
 
                 <div className={cartContainerClasses}>
-                    <Cart cartData={cartData} setCartData={setCartData} />
+                    <Cart cartData={cartData} setCartData={setCartData} isCartActive={isCartActive} setIsCartActive={setIsCartActive}/>
                 </div>
 
                 <Footer />

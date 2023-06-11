@@ -20,6 +20,10 @@ const Search = ({
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
     };
+    const totalQuantity = cartData.reduce(
+        (acc, curr) => acc + curr.quantity,
+        0
+    );
 
     return (
         <div className="Searchbar">
@@ -44,7 +48,7 @@ const Search = ({
                     className="CartButton"
                     onClick={() => setIsCartActive((prevState) => !prevState)}
                 >
-                    Cart ({cartData.length})
+                    Cart ({totalQuantity})
                 </button>
             </div>
         </div>
