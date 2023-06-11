@@ -6,8 +6,8 @@
     display: grid;
     grid-template-areas:
         "Search Search Search Search"
-        "SideBar Products Products Products"
-        "SideBar Products Products Products"
+        "SideBar Products Products CartContainer"
+        "SideBar Products Products CartContainer"
         "Footer Footer Footer Footer";
     grid-template-rows: 3.5rem auto auto 3.7rem;
     grid-template-columns: 10rem auto auto 15rem;
@@ -37,8 +37,14 @@
     padding: 1rem;
 }
 
-.Cart {
-    background-color: rgba(255, 255, 255, 0.04);
-    grid-area: Cart;
-    display: none;
+.CartContainer {
+    grid-area: CartContainer;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.CartContainer.Active {
+    transform: translateX(-100%);
 }

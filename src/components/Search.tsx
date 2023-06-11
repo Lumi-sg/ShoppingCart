@@ -1,12 +1,19 @@
 import "../styles/Search.css";
+import { Product } from "./ProductFactory";
 
 type SearchProps = {
     search: string;
     setSearch: React.Dispatch<React.SetStateAction<string>>;
     setSelectedProduct: React.Dispatch<React.SetStateAction<string>>;
+    cartData: Product[];
 };
 
-const Search = ({ search, setSearch, setSelectedProduct }: SearchProps) => {
+const Search = ({
+    search,
+    setSearch,
+    setSelectedProduct,
+    cartData,
+}: SearchProps) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
     };
@@ -30,7 +37,7 @@ const Search = ({ search, setSearch, setSelectedProduct }: SearchProps) => {
                 </form>
             </div>
             <div className="cartButtonDiv">
-                <button className="CartButton">Cart</button>
+                <button className="CartButton">Cart ({cartData.length})</button>
             </div>
         </div>
     );

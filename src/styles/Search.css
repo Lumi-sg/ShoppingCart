@@ -21,9 +21,13 @@ button {
     background-color: #333;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+
     border-radius: 5px;
     cursor: pointer;
+}
+
+.Searchbar button {
+    padding: 0.5rem 1rem;
 }
 
 button:hover {

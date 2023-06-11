@@ -1,5 +1,5 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes } from "react-router";
 
 import "./styles/Products.css";
@@ -16,7 +16,25 @@ import { Product } from "./components/ProductFactory";
 const App = () => {
     const [selectedProduct, setSelectedProduct] = useState("");
     const [search, setSearch] = useState("");
-    const [cartData, setCartData] = useState<Product[]>([]);
+    const [cartData, setCartData] = useState<Product[]>(() => {
+        const savedCartData = localStorage.getItem("cartData");
+        return savedCartData ? JSON.parse(savedCartData) : [];
+    });
+    const [isCartActive, setIsCartActive] = useState(false);
+
+    useEffect(() => {
+        const savedCartData = localStorage.getItem("cartData");
+
+        if (savedCartData) {
+            setCartData(JSON.parse(savedCartData));
+            console.log("cartData loaded from local storage");
+        }
+    }, []);
+
+    useEffect(() => {
+        console.log("cartData saved to local storage");
+        localStorage.setItem("cartData", JSON.stringify(cartData));
+    }, [cartData]);
 
     return (
         <BrowserRouter>
@@ -25,6 +43,7 @@ const App = () => {
                     search={search}
                     setSearch={setSearch}
                     setSelectedProduct={setSelectedProduct}
+                    cartData={cartData}
                 />
                 <Sidebar
                     setSelectedProduct={setSelectedProduct}
